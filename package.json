@@ -1,5 +1,5 @@
 {
-  "name": "moengage-sdk",
+  "name": "@stack-finance/moengage-sdk",
   "version": "1.0.0",
   "description": "An API to API NodeJS SDK for MoEngage",
   "main": "index.js",
@@ -30,6 +30,6 @@
   "homepage": "https://github.com/stack-finance/moengage-sdk#readme",
   "dependencies": {
     "node-fetch": "^3.1.1"
-  }
+  },
+  "devDependencies": {}
 }
-
