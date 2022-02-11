@@ -11,12 +11,12 @@ You will also need the `API ID` and `API Key` for your account, which can be obt
 
 ## Installation
 
-`npm i moengage-sdk`
+`npm i @stack-finance/moengage-sdk`
 
 ## Starter Code
 
 ```js
-import { MoEngage } from 'moengage-sdk';
+import { MoEngage } from '@stack-finance/moengage-sdk';
 
 const moengage = new MoEngage(
   '<API ID>',
