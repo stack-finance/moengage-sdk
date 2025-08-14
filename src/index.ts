@@ -1,10 +1,15 @@
 import fetch from "node-fetch";
 
-const MOENGAGE_BASE_URL = (dataCenter) =>
+const MOENGAGE_BASE_URL = (dataCenter: string) =>
   `https://api-${dataCenter}.moengage.com/v1`;
 
 export class MoEngage {
-  constructor(apiId, apiKey, dataCenter) {
+  private readonly apiId: string;
+  private readonly apiKey: string;
+  private readonly dataCenter: string;
+  private readonly baseURL: string;
+
+  constructor(apiId: string, apiKey: string, dataCenter: string) {
     this.apiId = apiId;
     this.apiKey = apiKey;
     if (!["01", "02", "03"].includes(dataCenter)) {
@@ -14,7 +19,7 @@ export class MoEngage {
     this.baseURL = MOENGAGE_BASE_URL(dataCenter);
   }
 
-  addOrUpdateUser(payload) {
+  addOrUpdateUser(payload: object) {
     return fetch(`${this.baseURL}/customer/${this.apiId}`, {
       method: "POST",
       headers: {
@@ -26,7 +31,7 @@ export class MoEngage {
     });
   }
 
-  addOrUpdateDevice(payload) {
+  addOrUpdateDevice(payload: object) {
     return fetch(`${this.baseURL}/device/${this.apiId}`, {
       method: "POST",
       headers: {
@@ -38,7 +43,7 @@ export class MoEngage {
     });
   }
 
-  triggerEvent(payload) {
+  triggerEvent(payload: object) {
     return fetch(`${this.baseURL}/event/${this.apiId}`, {
       method: "POST",
       headers: {
@@ -51,6 +56,4 @@ export class MoEngage {
   }
 }
 
-export default {
-  MoEngage,
-};
+export default { MoEngage };

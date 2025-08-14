@@ -1,8 +1,10 @@
 {
+  "type": "module",
   "name": "@stack-finance/moengage-sdk",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An API to API NodeJS SDK for MoEngage",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
@@ -10,19 +12,15 @@
     "format": "biome check --write src/"
 
   },
-  "type": "module",
   "keywords": [
     "moengage",
     "s2s",
     "nodejs"
   ],
-  "types": "./types/index.d.ts",
   "files": [
-    "index.js",
-    "types/index.d.ts",
-    "utils/errors.js"
+    "dist"
   ],
-  "author": "Samarth Kulkarni",
+  "author": "Stack Finance",
   "license": "MIT",
   "repository": {
     "type": "git",
