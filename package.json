@@ -1,10 +1,14 @@
 {
   "name": "@stack-finance/moengage-sdk",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An API to API NodeJS SDK for MoEngage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+    "check": "biome check src/",
+    "format": "biome check --write src/"
+
   },
   "type": "module",
   "keywords": [
@@ -28,7 +32,14 @@
     "url": "https://github.com/stack-finance/moengage-sdk/issues"
   },
   "homepage": "https://github.com/stack-finance/moengage-sdk#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^24.2.1",
+    "tsc-alias": "^1.8.16",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
+  },
   "dependencies": {
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^3.3.2"
   }
 }
